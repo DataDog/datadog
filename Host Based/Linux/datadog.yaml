@@ -3,6 +3,7 @@
 ## Edit this in file location :
 ## Linux: /etc/datadog-agent/datadog.yaml
 ## Windows: %ProgramData%\Datadog\datadog.yaml
+# Change <API_KEY> with your api_key
 api_key: <API_KEY>
 site: datadoghq.com
 
