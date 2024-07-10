@@ -5,7 +5,7 @@
 また、もし設定上より詳細な内容やAgentのコマンドをご確認されたい場合は以下のオフィシャルドキュメントにてご参照お願いします。  
 　- Agentの使い方：<[https://docs.datadoghq.com/ja/agent/](https://docs.datadoghq.com/ja/agent/basic_agent_usage/?tab=Linux)>
 
-**Windows**
+**Windows**  
 ※注意点として、DatadogのコンフィグファイルはすべてエンコードがUTF-8であり、エンドーどutf-8を指定した上で編集するようお願いします。  
 Step1.  
 Step2.  
