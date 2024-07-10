@@ -6,7 +6,7 @@
 api_key: <API_KEY>
 site: datadoghq.com
 
-## Tags https://docs.datadoghq.com/tagging/
+## Add tags for this host, https://docs.datadoghq.com/tagging/
 # tags:
 #   - team:infra
 #   - <TAG_KEY>:<TAG_VALUE>
@@ -25,7 +25,7 @@ process_config:
   process_collection:
     enabled: true
 
-## Proxy通信の場合は以下を設定
+## Setup below if you are using proxy, https://docs.datadoghq.com/ja/agent/configuration/proxy/?tab=linux
 # proxy:
 #   https: http://<USERNAME>:<PASSWORD>@<PROXY_SERVER_FOR_HTTPS>:<PORT>
 #   http: http://<USERNAME>:<PASSWORD>@<PROXY_SERVER_FOR_HTTP>:<PORT>
