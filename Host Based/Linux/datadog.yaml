@@ -6,7 +6,7 @@
 
 # Change <API_KEY> with your api_key
 api_key: <API_KEY>
-site: datadoghq.com
+site: ap1.datadoghq.com
 
 ## Add tags for this host, https://docs.datadoghq.com/tagging/
 # tags:
