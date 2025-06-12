@@ -1,0 +1,81 @@
+{
+    "containerDefinitions": [
+      {
+        "name": "datadog-agent",
+        "image": "public.ecr.aws/datadog/agent:latest",
+        "cpu": 100,
+        "memory": 512,
+        "essential": true,
+        "portMappings": [
+            {
+              "hostPort": 8126,
+              "protocol": "tcp",
+              "containerPort": 8126
+            }
+          ],
+        "mountPoints": [
+          {
+            "containerPath": "/var/run/docker.sock",
+            "sourceVolume": "docker_sock",
+            "readOnly": true
+          },
+          {
+            "containerPath": "/host/sys/fs/cgroup",
+            "sourceVolume": "cgroup",
+            "readOnly": true
+          },
+          {
+            "containerPath": "/host/proc",
+            "sourceVolume": "proc",
+            "readOnly": true
+          }
+        ],
+        "secrets": [
+        {
+            "name": "DD_API_KEY",
+            "valueFrom": "<ARN_OF_YOUR_API_KEY>"
+        }
+],
+        "environment": [
+          {
+            "name": "DD_SITE",
+            "value": "<YOUR DD_SITE>"
+          },
+          {
+            "name": "DD_LOGS_ENABLED",
+            "value": "true"
+          },
+          {
+            "name": "DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL",
+            "value": "true"
+          },
+          {
+            "name": "DD_PROCESS_AGENT_ENABLED",
+            "value": "true"
+          }
+        ]
+      }
+    ],
+    "volumes": [
+      {
+        "host": {
+          "sourcePath": "/var/run/docker.sock"
+        },
+        "name": "docker_sock"
+      },
+      {
+        "host": {
+          "sourcePath": "/proc/"
+        },
+        "name": "proc"
+      },
+      {
+        "host": {
+          "sourcePath": "/sys/fs/cgroup/"
+        },
+        "name": "cgroup"
+      }
+    ],
+    "family": "datadog-agent-task",
+    "executionRoleArn": "<ARN_OF_YOUR_ecsTaskExecutionRole>"  
+  }
